@@ -1,8 +1,10 @@
+import { Tag } from 'src/tags/entity/tags.entity';
 import { User } from 'src/users/entities/users.entities';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToMany,
   ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -28,4 +30,7 @@ export class Post {
   createdAt: Date;
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @ManyToMany(() => Tag, (tag) => tag.posts)
+  tags: Tag[];
 }
