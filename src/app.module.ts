@@ -6,6 +6,8 @@ import { UsersModule } from './users/users.module';
 import { UserMetaModule } from './user-meta/user-meta.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { PostsModule } from './posts/posts.module';
+import { TagsModule } from './tags/tags.module';
 
 @Module({
   imports: [
@@ -30,6 +32,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     AuthModule,
     UsersModule,
     UserMetaModule,
+    PostsModule,
+    TagsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
